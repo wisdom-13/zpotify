@@ -31,12 +31,12 @@ export const MyUserContextProvider = (props: Props) => {
   } = useSessionContext();
 
   const user = useSupaUser();
-  const asccessToken = session?.access_token ?? null;
+  const accessToken = session?.access_token ?? null;
   const [isLoadingData, setIsLoadingData] = useState(false);
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [subscription, setSubscription] = useState<Subscription | null>(null);
 
-  const getUserDetails = () => supabase.from('suers').select('*').single();
+  const getUserDetails = () => supabase.from('uers').select('*').single();
   const getSubscription = () =>
     supabase
       .from('subscriptions')
